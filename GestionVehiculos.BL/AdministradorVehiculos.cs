@@ -36,7 +36,7 @@ namespace GestionVehiculos.BL
         public async Task EditarVehiculoAsync(Vehiculo vehiculo)
         {
             Vehiculo vehiculoActual = await obtenerUnVehiculoAsync(vehiculo.Id);
-            if (vehiculo != null)
+            if (vehiculoActual != null)
             {
                 vehiculoActual.modelo = vehiculo.modelo;
                 await _vehiculosRepository.actualizarAsync(vehiculoActual);
